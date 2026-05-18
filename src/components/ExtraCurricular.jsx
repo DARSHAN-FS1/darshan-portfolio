@@ -46,7 +46,7 @@ const ExtraCurricular = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`glass-card p-8 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 ${act.border}`}
+              className={`glass-card p-6 md:p-8 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 ${act.border}`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${act.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               

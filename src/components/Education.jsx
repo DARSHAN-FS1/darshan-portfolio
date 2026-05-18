@@ -54,7 +54,7 @@ const Education = () => {
                     <h4 className="text-lg text-gray-300">{edu.institution}</h4>
                   </div>
                 </div>
-                <div className="flex flex-col items-end gap-2">
+                <div className="flex flex-col items-start md:items-end gap-2">
                   <div className="px-4 py-1.5 rounded-full glass border border-white/10 text-gray-300 text-sm font-mono whitespace-nowrap w-max group-hover:border-neonPurple/30">
                     {edu.date}
                   </div>

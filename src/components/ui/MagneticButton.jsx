@@ -26,7 +26,9 @@ const MagneticButton = ({ children, className = '', onClick, href }) => {
       onMouseLeave={reset}
       animate={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className={`relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium rounded-full group cursor-pointer ${className}`}
+      className={`relative inline-flex items-center justify-center ${
+        className.includes('p-') ? '' : 'px-8 py-3'
+      } overflow-hidden font-medium rounded-full group cursor-pointer ${className}`}
       onClick={onClick}
     >
       <span className="absolute inset-0 w-full h-full transition duration-300 ease-out opacity-0 group-hover:opacity-100 bg-gradient-to-r from-neonBlue/20 to-neonPurple/20 blur-sm"></span>

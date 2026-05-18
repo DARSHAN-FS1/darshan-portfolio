@@ -26,14 +26,14 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-wrap justify-center gap-6 md:gap-10"
         >
-          <MagneticButton href="https://github.com/DARSHAN-FS1" className="glass p-8 md:p-10 border border-white/10 rounded-3xl hover:border-white hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] group">
+          <MagneticButton href="https://github.com/DARSHAN-FS1" className="glass p-6 md:p-10 border border-white/10 rounded-3xl hover:border-white hover:bg-white/5 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] group">
             <div className="flex flex-col items-center gap-4 w-20">
               <Github size={42} className="text-gray-300 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
               <span className="font-display font-bold text-gray-400 group-hover:text-white transition-colors">GitHub</span>
             </div>
           </MagneticButton>
           
-          <MagneticButton href="https://www.linkedin.com/in/darshan-chandankhede-592439313/" className="glass p-8 md:p-10 border border-white/10 rounded-3xl hover:border-neonBlue hover:bg-neonBlue/5 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] group">
+          <MagneticButton href="https://www.linkedin.com/in/darshan-chandankhede-592439313/" className="glass p-6 md:p-10 border border-white/10 rounded-3xl hover:border-neonBlue hover:bg-neonBlue/5 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] group">
             <div className="flex flex-col items-center gap-4 w-20">
               <Linkedin size={42} className="text-gray-300 group-hover:text-neonBlue group-hover:scale-110 transition-all duration-300" />
               <span className="font-display font-bold text-gray-400 group-hover:text-neonBlue transition-colors">LinkedIn</span>
@@ -41,7 +41,7 @@ const Contact = () => {
           </MagneticButton>
 
           {/* NOTE: Update the href="#" with your actual Instagram profile link */}
-          <MagneticButton href="#" className="glass p-8 md:p-10 border border-white/10 rounded-3xl hover:border-pink-500 hover:bg-pink-500/5 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] group">
+          <MagneticButton href="#" className="glass p-6 md:p-10 border border-white/10 rounded-3xl hover:border-pink-500 hover:bg-pink-500/5 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] group">
             <div className="flex flex-col items-center gap-4 w-20">
               <Instagram size={42} className="text-gray-300 group-hover:text-pink-500 group-hover:scale-110 transition-all duration-300" />
               <span className="font-display font-bold text-gray-400 group-hover:text-pink-500 transition-colors">Instagram</span>

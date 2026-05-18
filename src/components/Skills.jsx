@@ -28,17 +28,17 @@ const SkillRing = ({ skill, index }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
       whileHover={{ y: -5, scale: 1.05 }}
-      className="glass-card flex flex-col items-center justify-center p-6 relative group overflow-visible hover:bg-white/5 hover:border-white/20 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
+      className="glass-card flex flex-col items-center justify-center p-4 md:p-6 relative group overflow-visible hover:bg-white/5 hover:border-white/20 transition-all duration-500 shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
     >
       {/* Tooltip */}
-      <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-52 p-3 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 shadow-[0_10px_30px_rgba(0,0,0,0.8)] text-gray-300">
+      <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-44 md:w-52 p-2 md:p-3 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 shadow-[0_10px_30px_rgba(0,0,0,0.8)] text-gray-300">
         {skill.tooltip}
         <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-black/90 border-b border-r border-white/10 rotate-45"></div>
       </div>
 
-      <div className="relative w-24 h-24 flex items-center justify-center mb-4">
+      <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center mb-3 md:mb-4">
         {/* Background Ring */}
-        <svg className="w-full h-full transform -rotate-90">
+        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 96 96">
           <circle
             cx="48"
             cy="48"
@@ -64,7 +64,7 @@ const SkillRing = ({ skill, index }) => {
             style={{ filter: `drop-shadow(0 0 10px ${skill.color})` }}
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-colors">
+        <div className="absolute inset-0 flex items-center justify-center text-xs md:text-sm font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-colors">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -76,7 +76,7 @@ const SkillRing = ({ skill, index }) => {
         </div>
       </div>
       
-      <span className="font-display font-medium text-gray-200 group-hover:text-white transition-colors text-center w-full truncate">
+      <span className="font-display text-xs md:text-sm font-medium text-gray-200 group-hover:text-white transition-colors text-center w-full truncate">
         {skill.name}
       </span>
       
@@ -104,7 +104,7 @@ const Skills = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-neonPurple to-transparent rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
           {skills.map((skill, index) => (
             <SkillRing key={skill.name} skill={skill} index={index} />
           ))}

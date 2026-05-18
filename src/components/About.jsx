@@ -41,7 +41,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             {[
               { icon: <Brain size={24} />, title: "AI / ML", desc: "Building intelligent systems & models", color: "text-neonBlue", bg: "bg-neonBlue/10" },

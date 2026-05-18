@@ -47,7 +47,7 @@ const Experience = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-neonBlue to-transparent rounded-full mx-auto"></div>
         </motion.div>
 
-        <div className="relative border-l-2 border-white/10 ml-4 md:ml-0 md:pl-0">
+        <div className="relative border-l-2 md:border-l-0 border-white/10 ml-4 md:ml-0 md:pl-0">
           {experiences.map((exp, index) => (
             <motion.div 
               key={index}
@@ -79,15 +79,18 @@ const Experience = () => {
                   </div>
                   <ul className={`text-gray-400 space-y-2 text-sm ${index % 2 === 0 ? 'md:text-right' : 'text-left'}`}>
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="flex gap-2 items-start justify-end md:justify-start flex-row-reverse md:flex-row">
+                      <li key={i} className={`flex gap-2 items-start justify-start ${
+                        index % 2 === 0 ? 'md:flex-row-reverse md:justify-end' : 'md:flex-row'
+                      }`}>
                         {index % 2 === 0 ? (
                           <>
-                            <span>{bullet}</span>
-                            <span className="text-neonBlue mt-1 mt-0.5">•</span>
+                            <span className="hidden md:inline">{bullet}</span>
+                            <span className="text-neonBlue mt-0.5">•</span>
+                            <span className="md:hidden">{bullet}</span>
                           </>
                         ) : (
                           <>
-                            <span className="text-neonBlue mt-1">•</span>
+                            <span className="text-neonBlue mt-0.5">•</span>
                             <span>{bullet}</span>
                           </>
                         )}

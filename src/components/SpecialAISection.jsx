@@ -32,34 +32,34 @@ const SpecialAISection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[450px] w-full rounded-3xl glass border border-neonPurple/20 overflow-hidden group shadow-[0_0_40px_rgba(188,19,254,0.1)]"
+            className="relative h-[580px] md:h-[450px] w-full rounded-3xl glass border border-neonPurple/20 overflow-hidden group shadow-[0_0_40px_rgba(188,19,254,0.1)]"
           >
             {/* Animated Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
             
-            <div className="absolute inset-0 flex flex-col justify-center items-center gap-12 p-8">
-              <div className="flex justify-between w-full max-w-md relative">
+            <div className="absolute inset-0 flex flex-col justify-center items-center gap-6 md:gap-12 p-6 md:p-8">
+              <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[200px] md:max-w-md relative gap-14 md:gap-0">
                 {/* Connecting Lines */}
-                <div className="absolute top-1/2 left-10 right-10 h-0.5 bg-gradient-to-r from-neonBlue via-white to-neonPurple -translate-y-1/2 z-0">
+                <div className="absolute top-10 md:top-1/2 bottom-10 md:bottom-auto left-1/2 md:left-10 md:right-10 w-0.5 md:w-auto h-auto md:h-0.5 bg-gradient-to-b md:bg-gradient-to-r from-neonBlue via-white to-neonPurple -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 z-0">
                   <div className="w-full h-full bg-white opacity-50 animate-[pulse_1.5s_infinite]"></div>
                 </div>
                 
                 {/* Nodes */}
                 <motion.div whileHover={{ scale: 1.1, rotate: 90 }} className="relative z-10 w-20 h-20 rounded-full bg-dark border-2 border-neonBlue flex items-center justify-center shadow-[0_0_20px_rgba(0,240,255,0.4)]">
                   <Scan className="text-neonBlue" size={32} />
-                  <span className="absolute -bottom-8 text-xs font-mono text-neonBlue text-center w-32 left-1/2 -translate-x-1/2">MRI Input</span>
+                  <span className="absolute left-24 md:left-1/2 md:-translate-x-1/2 top-1/2 md:top-auto md:-bottom-8 -translate-y-1/2 md:translate-y-0 text-xs font-mono text-neonBlue text-left md:text-center w-32 whitespace-nowrap">MRI Input</span>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }} className="relative z-10 w-24 h-24 rounded-full bg-dark border-2 border-neonPurple flex items-center justify-center shadow-[0_0_25px_rgba(188,19,254,0.4)]">
                   <Network className="text-neonPurple" size={40} />
-                  <span className="absolute -bottom-8 text-xs font-mono text-neonPurple text-center w-32 left-1/2 -translate-x-1/2">FastAPI Model</span>
+                  <span className="absolute left-28 md:left-1/2 md:-translate-x-1/2 top-1/2 md:top-auto md:-bottom-8 -translate-y-1/2 md:translate-y-0 text-xs font-mono text-neonPurple text-left md:text-center w-32 whitespace-nowrap">FastAPI Model</span>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }} className="relative z-10 w-20 h-20 rounded-full bg-dark border-2 border-green-400 flex items-center justify-center shadow-[0_0_20px_rgba(74,222,128,0.4)]">
                   <Activity className="text-green-400" size={32} />
-                  <span className="absolute -bottom-8 text-xs font-mono text-green-400 text-center w-32 left-1/2 -translate-x-1/2">Grad-CAM Output</span>
+                  <span className="absolute left-24 md:left-1/2 md:-translate-x-1/2 top-1/2 md:top-auto md:-bottom-8 -translate-y-1/2 md:translate-y-0 text-xs font-mono text-green-400 text-left md:text-center w-32 whitespace-nowrap">Grad-CAM Output</span>
                 </motion.div>
               </div>
               
-              <div className="text-center space-y-3 mt-8 glass-card border-white/10 bg-black/50 w-full max-w-sm hover:border-neonPurple/50 transition-colors">
+              <div className="text-center space-y-3 mt-4 md:mt-8 glass-card border-white/10 bg-black/50 w-full max-w-sm hover:border-neonPurple/50 transition-colors">
                 <h4 className="text-white font-semibold flex items-center justify-center gap-2 font-display">
                   <Cpu size={18} className="text-neonPurple" /> Explainable Inference
                 </h4>

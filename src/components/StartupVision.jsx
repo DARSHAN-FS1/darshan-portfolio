@@ -50,7 +50,7 @@ const StartupVision = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`glass-card p-8 relative overflow-hidden group transition-all duration-500 ${startup.border} ${startup.glow}`}
+              className={`glass-card p-6 md:p-8 relative overflow-hidden group transition-all duration-500 ${startup.border} ${startup.glow}`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${startup.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               

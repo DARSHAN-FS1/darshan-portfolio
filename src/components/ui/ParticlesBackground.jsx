@@ -5,13 +5,14 @@ const ParticlesBackground = () => {
 
   useEffect(() => {
     // Generate random particles
-    const particleCount = 50;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 15 : 50;
     const newParticles = Array.from({ length: particleCount }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 3 + 1,
-      duration: Math.random() * 20 + 10,
+      duration: Math.random() * (isMobile ? 30 : 20) + 10,
       delay: Math.random() * 5,
     }));
     setParticles(newParticles);

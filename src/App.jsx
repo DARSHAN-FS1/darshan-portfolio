@@ -10,16 +10,18 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import SpecialAISection from './components/SpecialAISection';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import ExtraCurricular from './components/ExtraCurricular';
+import StartupVision from './components/StartupVision';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <ReactLenis root options={{ lerp: 0.05, smoothWheel: true }}>
-      <div className="relative min-h-screen bg-dark text-white font-sans selection:bg-neonBlue selection:text-dark">
+      <div className="relative min-h-screen bg-dark text-white font-sans selection:bg-neonBlue selection:text-dark overflow-x-hidden w-full">
         <LoadingScreen />
         <CustomCursor />
         <Navbar />
@@ -38,9 +40,11 @@ function App() {
           <div id="about"><About /></div>
           <div id="skills"><Skills /></div>
           <div id="projects"><Projects /></div>
+          <div id="aiwork"><SpecialAISection /></div>
           <div id="experience"><Experience /></div>
           <div id="education"><Education /></div>
           <div id="extracurricular"><ExtraCurricular /></div>
+          <div id="futurevision"><StartupVision /></div>
           <div id="contact"><Contact /></div>
         </main>
         

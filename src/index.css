@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  cursor: none; /* Hide default cursor to use custom one */
-}
-
-body {
-  @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
-  /* Make sure lenis handles smooth scrolling, so we don't strictly need css scroll-behavior */
+/* Cursor styles */
+.custom-cursor-active, .custom-cursor-active * {
+  cursor: none !important;
 }
 
 /* Typography defaults */
@@ -48,7 +44,4 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 30px rgba(0, 240, 255, 0.05);
 }
 
-/* Hide cursor on interactive elements as well to ensure custom cursor always shows */
-a, button, input, textarea, select {
-  cursor: none;
-}
+

@@ -40,6 +40,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const scrollTo = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -60,7 +71,9 @@ const Navbar = () => {
     >
       <div className="flex justify-center w-full px-4 md:px-8">
         <div className={`flex items-center justify-center rounded-full transition-all duration-500 w-fit ${
-          isScrolled ? 'glass px-6 py-3 shadow-[0_0_20px_rgba(0,0,0,0.5)]' : 'px-2'
+          isScrolled 
+            ? 'glass px-6 py-3 shadow-[0_0_20px_rgba(0,0,0,0.5)]' 
+            : 'glass px-4 py-3 border border-white/10 md:bg-transparent md:border-none md:px-2 md:py-0'
         }`}>
           
 
@@ -106,10 +119,11 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: '100vh' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden fixed top-0 left-0 w-full h-screen bg-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="md:hidden fixed inset-0 w-full h-screen bg-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8"
           >
             {navLinks.map((link) => (
               <a

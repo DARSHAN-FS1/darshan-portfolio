@@ -133,7 +133,7 @@ const Projects = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 50 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="bg-gray-900 border border-white/10 rounded-2xl p-8 max-w-2xl w-full relative shadow-[0_0_50px_rgba(0,240,255,0.1)]"
+              className="bg-gray-900 border border-white/10 rounded-2xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-[0_0_50px_rgba(0,240,255,0.1)]"
               onClick={e => e.stopPropagation()}
             >
               <button 
