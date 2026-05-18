@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  cursor: none; /* Hide default cursor to use custom one */
+}
+
+body {
+  @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
+  /* Make sure lenis handles smooth scrolling, so we don't strictly need css scroll-behavior */
+}
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display; /* We'll map this to Space Grotesk in tailwind config */
+}
+
+/* Custom Scrollbar (hidden or customized for lenis) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505; 
+}
+::-webkit-scrollbar-thumb {
+  background: #222; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  @apply glass rounded-2xl p-6 transition-all duration-300;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.05);
+}
+
+/* Hide cursor on interactive elements as well to ensure custom cursor always shows */
+a, button, input, textarea, select {
+  cursor: none;
+}
